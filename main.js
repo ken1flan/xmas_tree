@@ -8,7 +8,6 @@ function draw() {
   var canvas = document.getElementById('tutorial');
   var ctx = canvas.getContext('2d');
   file://だとcanvasが汚染扱いになってしまうので、コメントアウト。
-  どこかサーバに置けば大丈夫とのこと。
   var img = new Image();
   img.src = 'really.png';
   img.onload = function () {
@@ -22,12 +21,6 @@ function draw() {
   ctx.fillStyle = 'black';
   ctx.font = '72px serif';
   ctx.fillText(text, 50, 100);
-
-  var twitterHref = 'https://twitter.com/share?ref_src=twsrc%5Etfw';
-  twitterHref += '?url=' + canvas.toDataURL();
-  console.log(twitterHref);
-  var tweetButton = document.getElementById('tweetButton');
-  tweetButton.href = twitterHref;
 }
 
 function download() {
