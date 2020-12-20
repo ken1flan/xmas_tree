@@ -7,7 +7,6 @@ function initialize() {
 function draw() {
   var canvas = document.getElementById('tutorial');
   var ctx = canvas.getContext('2d');
-  file://だとcanvasが汚染扱いになってしまうので、コメントアウト。
   var img = new Image();
   img.src = 'really.png';
   img.onload = function () {
