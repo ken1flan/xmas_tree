@@ -1,29 +1,15 @@
+var treeImage = new Image();
+
 function initialize() {
-  draw();
-  document.getElementById('downloadLink').addEventListener('click', download);
-  document.getElementById('inputText').addEventListener('keyup', draw);
+  treeImage.src = 'tree.png'
+
+  window.requestAnimationFrame(draw);
 }
 
 function draw() {
   var canvas = document.getElementById('tutorial');
   var ctx = canvas.getContext('2d');
-  var img = new Image();
-  img.src = 'really.png';
-  img.onload = function () {
-    ctx.drawImage(img, 0, 0, 900, 900);
-    ctx.font = '72px serif';
-    ctx.fillText('まぢ？', 50, 100);
-  };
-  ctx.fillStyle = 'white';
-  ctx.fillRect(0, 0, 500, 500);
-  var text = document.getElementById('inputText').value;
-  ctx.fillStyle = 'black';
-  ctx.font = '72px serif';
-  ctx.fillText(text, 50, 100);
-}
+  ctx.drawImage(treeImage, 0, 0, 320, 320);
 
-function download() {
-  var canvas = document.getElementById('tutorial');
-  var dataURL = canvas.toDataURL();
-  document.getElementById('downloadLink').href = dataURL;
+  window.requestAnimationFrame(draw);
 }
